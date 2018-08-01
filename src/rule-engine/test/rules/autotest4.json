@@ -1,0 +1,41 @@
+{
+    "result": {
+        "retInfo": "规则查询成功",
+        "rule": {
+            "ruleId": "1529583875.818.80441",
+            "description": "袁威测试空气净化器进入睡眠模式",
+            "trigger": {
+                "switch": {
+                    "enabled": "on",
+                    "notify": "on",
+                    "timeCondition": "off",
+                    "deviceCondition": "on",
+                    "manual": "off"
+                },
+                "triggerType": "auto|manual"
+            },
+            "conditions": {
+                "conditionLogic": "",
+                "deviceCondition": {
+                    "deviceStatus": [
+                        {
+                            "propValue": "v==1",
+                            "deviceId": "0007A895C8A7",
+                            "propName": "WorkMode"
+                        }
+                    ],
+                    "deviceLogic": ""
+                }
+            },
+            "ruleName": "autotest4",
+            "actions": {
+                "notify": {
+                    "message": "空气净化器进入睡眠模式",
+                    "title": "袁威测试"
+                }
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/rule/query"
+}

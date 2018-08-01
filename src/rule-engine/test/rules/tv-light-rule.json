@@ -1,0 +1,49 @@
+{
+    "result": {
+        "retInfo": "规则查询成功",
+        "rule": {
+            "ruleId": "0000000000.000.00001",
+            "description": "当灯开, 光感值有变化, 且TV打开, 触发光亮调节",
+            "trigger": {
+                "switch": {
+                    "enabled": "on",
+                    "notify": "off",
+                    "timeCondition": "off",
+                    "deviceCondition": "on",
+                    "manual": "on"
+                },
+                "triggerType": "auto|manual"
+            },
+            "conditions": {
+                "conditionLogic": "and",
+                "deviceCondition": {
+                    "deviceStatus": [
+                        {
+                            "propValue": "v==1",
+                            "deviceId": "00000000000000000002",
+                            "propName": "PowerOnOff"
+                        },
+                        {
+                            "propValue": "v>=10 and v<=20",
+                            "deviceId": "00000000000000000001",
+                            "propName": "Quantity"
+                        }
+                    ],
+                    "deviceLogic": ""
+                }
+            },
+            "ruleName": "tv-light-rule",
+            "actions": {
+                "deviceControl": [
+                    {
+                        "propValue": "2",
+                        "deviceId": "38D269B0EA1801010311",
+                        "propName": "Brightness"
+                    }
+                ]
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/rule/query"
+}

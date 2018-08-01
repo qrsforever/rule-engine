@@ -1,0 +1,166 @@
+{
+    "result": {
+        "description": "智能烤箱",
+        "id": 14,
+        "profile": {
+            "OnlineState": {
+                "tag": "在线状态",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "离线",
+                    "1": "在线"
+                }
+            },
+            "CookTemperature": {
+                "tag": "烘烤温度",
+                "type": "int",
+                "range": "v >= 0 and v <= 250",
+                "step": "1",
+                "write": "T",
+                "unit": "℃",
+                "read": "T"
+            },
+            "ChildLock": {
+                "tag": "童锁",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "Light": {
+                "tag": "照明",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "Cleaning": {
+                "tag": "清洁",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "CookMode": {
+                "tag": "烘焙模式",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "6": "快速预热",
+                    "5": "对流烘焙",
+                    "10": "上烧烤+蒸汽",
+                    "1": "披萨模式",
+                    "13": "消毒",
+                    "2": "传统烘焙",
+                    "4": "传统烧烤",
+                    "3": "热风烧烤",
+                    "8": "发酵",
+                    "11": "上下烧烤+蒸汽",
+                    "12": "纯蒸汽",
+                    "9": "下烧烤",
+                    "7": "解冻"
+                }
+            },
+            "FoodType": {
+                "tag": "食品类别",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "面包类",
+                    "4": "肉类",
+                    "3": "鱼类",
+                    "5": "蔬菜类",
+                    "1": "糕点类"
+                }
+            },
+            "RemainingTime": {
+                "tag": "剩余时间",
+                "write": "T",
+                "type": "time",
+                "read": "T",
+                "range": "unlimited"
+            },
+            "CookTime": {
+                "tag": "烘烤时间",
+                "write": "T",
+                "type": "time",
+                "read": "T",
+                "range": "unlimited"
+            },
+            "Reservation": {
+                "tag": "预约",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "CookState": {
+                "tag": "烘焙状态",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "烘焙结束",
+                    "1": "正在烘焙"
+                }
+            },
+            "Notice": {
+                "tag": "提示信息",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "发酵结束",
+                    "4": "烘烤结束",
+                    "3": "解冻结束",
+                    "1": "预约结束"
+                }
+            },
+            "ReservationTime": {
+                "tag": "预约时间",
+                "write": "T",
+                "type": "time",
+                "read": "T",
+                "range": "unlimited"
+            },
+            "PowerOnOff": {
+                "tag": "开关状态",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "StartPause": {
+                "tag": "启动/暂停",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "暂停",
+                    "1": "启动"
+                }
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/device/profile"
+}

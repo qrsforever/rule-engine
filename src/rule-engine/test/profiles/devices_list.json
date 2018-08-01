@@ -1,0 +1,250 @@
+{
+    "result": {
+        "retCode": "00000",
+        "deviceInfos": [
+            {
+                "templateId": "8",
+                "productName": "空气净化器",
+                "manufacture": "uhome",
+                "aliasName": "空气净化器",
+                "deviceId": "0007A895C7C7",
+                "position": "1529470734.73.76536.110680818"
+            },
+            {
+                "templateId": "8",
+                "productName": "空气净化器",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "0007A895C8A7",
+                "position": null
+            },
+            {
+                "templateId": "8",
+                "productName": "空气净化器",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "0007A8A866C2",
+                "position": null
+            },
+            {
+                "templateId": "12",
+                "productName": "烟雾报警器",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "00124B00146D743D00",
+                "position": null
+            },
+            {
+                "templateId": "10",
+                "productName": "扫地机器人",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "04FA8309822A",
+                "position": null
+            },
+            {
+                "templateId": "16",
+                "productName": "海尔网关设备",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269AB8508",
+                "position": null
+            },
+            {
+                "templateId": "16",
+                "productName": "海尔网关设备",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269AF3BC7",
+                "position": null
+            },
+            {
+                "templateId": "16",
+                "productName": "海尔网关设备",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA18",
+                "position": null
+            },
+            {
+                "templateId": "17",
+                "productName": "情景设备",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1801000012",
+                "position": null
+            },
+            {
+                "templateId": "19",
+                "productName": "灯",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1801010311",
+                "position": null
+            },
+            {
+                "templateId": "19",
+                "productName": "灯",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1801010511",
+                "position": null
+            },
+            {
+                "templateId": "19",
+                "productName": "灯",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1801010611",
+                "position": null
+            },
+            {
+                "templateId": "26",
+                "productName": "窗帘",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1801010711",
+                "position": null
+            },
+            {
+                "templateId": "26",
+                "productName": "窗帘",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1801010811",
+                "position": null
+            },
+            {
+                "templateId": "19",
+                "productName": "灯",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1802010211",
+                "position": null
+            },
+            {
+                "templateId": "19",
+                "productName": "灯",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1802010311",
+                "position": null
+            },
+            {
+                "templateId": "19",
+                "productName": "灯",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1802010411",
+                "position": null
+            },
+            {
+                "templateId": "19",
+                "productName": "灯",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1802010511",
+                "position": null
+            },
+            {
+                "templateId": "19",
+                "productName": "灯",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1803010211",
+                "position": null
+            },
+            {
+                "templateId": "19",
+                "productName": "灯",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1803010311",
+                "position": null
+            },
+            {
+                "templateId": "19",
+                "productName": "灯",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1803010411",
+                "position": null
+            },
+            {
+                "templateId": "19",
+                "productName": "灯",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1804010311",
+                "position": null
+            },
+            {
+                "templateId": "25",
+                "productName": "紧急按钮",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "38D269B0EA1886D3E200",
+                "position": null
+            },
+            {
+                "templateId": "20",
+                "productName": "视频摄像头",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "9SG3WUS7SAVPJUBT111A",
+                "position": null
+            },
+            {
+                "templateId": "21",
+                "productName": "泊声背景音乐",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "BA5200009XD9REIVFIRI",
+                "position": null
+            },
+            {
+                "templateId": "15",
+                "productName": "分体智能空调",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "DC330D6E7B77",
+                "position": null
+            },
+            {
+                "templateId": "11",
+                "productName": "燃气灶",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "DC330D9CEAFD",
+                "position": null
+            },
+            {
+                "templateId": "14",
+                "productName": "网络烤箱",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "DC330DB6B9E1",
+                "position": null
+            },
+            {
+                "templateId": "18",
+                "productName": "海尔wifi门锁",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "DC330DBED04F",
+                "position": null
+            },
+            {
+                "templateId": "9",
+                "productName": "电热水器",
+                "manufacture": "uhome",
+                "aliasName": "",
+                "deviceId": "DC330DD45914",
+                "position": null
+            }
+        ],
+        "retInfo": "成功"
+    },
+    "status": 1,
+    "request": "/api/devices/list"
+}

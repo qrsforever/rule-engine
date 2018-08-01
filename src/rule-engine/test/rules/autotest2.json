@@ -1,0 +1,44 @@
+{
+    "result": {
+        "retInfo": "规则查询成功",
+        "rule": {
+            "ruleId": "1529578009.252.96872",
+            "description": "当空气净化器进入自动模式，扫地机器人进入沿边空闲模式",
+            "trigger": {
+                "switch": {
+                    "enabled": "on",
+                    "notify": "off",
+                    "timeCondition": "off",
+                    "deviceCondition": "on",
+                    "manual": "on"
+                },
+                "triggerType": "auto|manual"
+            },
+            "conditions": {
+                "conditionLogic": "",
+                "deviceCondition": {
+                    "deviceStatus": [
+                        {
+                            "propValue": "v==2",
+                            "deviceId": "0007A895C8A7",
+                            "propName": "WorkMode"
+                        }
+                    ],
+                    "deviceLogic": ""
+                }
+            },
+            "ruleName": "autotest2",
+            "actions": {
+                "deviceControl": [
+                    {
+                        "propValue": "1",
+                        "deviceId": "04FA8309822A",
+                        "propName": "CleaningMode"
+                    }
+                ]
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/rule/query"
+}

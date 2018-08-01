@@ -1,0 +1,40 @@
+{
+    "result": {
+        "retInfo": "规则查询成功",
+        "rule": {
+            "ruleId": "1529578775.206.24324",
+            "description": "当空气净化器进入手动模式，执行manualtest1",
+            "trigger": {
+                "switch": {
+                    "enabled": "on",
+                    "notify": "off",
+                    "timeCondition": "off",
+                    "deviceCondition": "on",
+                    "manual": "on"
+                },
+                "triggerType": "auto"
+            },
+            "conditions": {
+                "conditionLogic": "",
+                "deviceCondition": {
+                    "deviceStatus": [
+                        {
+                            "propValue": "v==5",
+                            "deviceId": "0007A895C8A7",
+                            "propName": "WorkMode"
+                        }
+                    ],
+                    "deviceLogic": ""
+                }
+            },
+            "ruleName": "autotest3",
+            "actions": {
+                "manualRuleId": [
+                    "1529578676.958.69587"
+                ]
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/rule/query"
+}

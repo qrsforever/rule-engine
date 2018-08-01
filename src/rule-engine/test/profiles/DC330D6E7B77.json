@@ -1,0 +1,153 @@
+{
+    "result": {
+        "description": "智能空调",
+        "id": 15,
+        "profile": {
+            "OnlineState": {
+                "tag": "在线状态",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "离线",
+                    "1": "在线"
+                }
+            },
+            "Anion": {
+                "tag": "负离子",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "WorkMode": {
+                "tag": "工作模式",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "除湿",
+                    "4": "制热",
+                    "3": "制冷",
+                    "5": "送风",
+                    "1": "智能"
+                }
+            },
+            "SelfCleaning": {
+                "tag": "自清扫",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "TemSetting": {
+                "tag": "湿度",
+                "type": "int",
+                "range": "v >= 16 and v <= 30",
+                "step": "1",
+                "write": "T",
+                "unit": "℃",
+                "read": "T"
+            },
+            "Lock": {
+                "tag": "电子锁",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "Heating": {
+                "tag": "电加热",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "HumuditySetting": {
+                "tag": "湿度",
+                "type": "int",
+                "range": "v >= 30 and v <= 90",
+                "step": "1",
+                "write": "T",
+                "unit": "%",
+                "read": "T"
+            },
+            "FreshAir": {
+                "tag": "新风",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "Humidification": {
+                "tag": "加湿",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "LeftRightWind": {
+                "tag": "左右摆风",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "UpDownWind": {
+                "tag": "上下摆风",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "PowerOnOff": {
+                "tag": "开关",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "WindSpeed": {
+                "tag": "风速",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "中",
+                    "4": "自动",
+                    "3": "低",
+                    "1": "高"
+                }
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/device/profile"
+}

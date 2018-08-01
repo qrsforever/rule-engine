@@ -1,0 +1,4 @@
+**/**/output
+**/clips/classes/*.clp
+**/clips/rules/*.clp
+**/clips/ruleengine.db

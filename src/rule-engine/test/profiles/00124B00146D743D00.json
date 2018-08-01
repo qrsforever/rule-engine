@@ -1,0 +1,50 @@
+{
+    "result": {
+        "description": "烟雾报警器",
+        "id": 12,
+        "profile": {
+            "OnlineState": {
+                "tag": "在线状态",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "离线",
+                    "1": "在线"
+                }
+            },
+            "PowerOnOff": {
+                "tag": "开关状态",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "SecurityControl": {
+                "tag": "布防开关",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "Battery": {
+                "tag": "剩余电量",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "正常",
+                    "1": "低电量"
+                }
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/device/profile"
+}

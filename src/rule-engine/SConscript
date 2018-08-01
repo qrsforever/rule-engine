@@ -1,0 +1,98 @@
+##
+# rule-engine build script
+##
+
+Import('env')
+
+rule_engine_env = env.Clone()
+
+target_os = rule_engine_env.get('TARGET_OS')
+
+rule_engine_env.AppendUnique(CPPPATH = [
+    '.',
+    'RuleDriver/src',
+    'RuleDriver/src/tables',
+    '#/resource/IPCA/inc',
+    '#/extlibs/sqlite3',
+    '#/extlibs/rapidjson/rapidjson/include',
+    '#homebrain/external/clips/core',
+    'Clipscpp/src',
+    'Payload/src',
+    '../utils/Log/src',
+    '../utils/Message/src',
+    '../utils/Misc/src',
+    '../utils/SQLite/src',
+    '../device-manager/include',
+])
+
+rule_engine_env.AppendUnique(CXXFLAGS = [
+    '-Wno-error=unused-variable',
+    '-Wno-error=unused-parameter',
+    '-Wno-error=unused-result',
+    '-Wno-error=unused-but-set-variable',
+])
+
+rule_engine_env.AppendUnique(RPATH = [rule_engine_env.get('BUILD_DIR')])
+
+rule_engine_env.AppendUnique(CXXFLAGS = ['-std=c++0x', '-Wall', '-Wextra', '-Werror'])
+
+rule_engine_env.AppendUnique(LIBS=[
+    'clips',
+    'sqlite3',
+    'HB_Utils',
+    'device_manager',
+])
+
+rule_engine_env.AppendUnique(CPPDEFINES = ['USE_SHARED_PTR'])
+
+if not rule_engine_env.get('RELEASE'):
+    rule_engine_env.AppendUnique(CPPDEFINES = ['DEBUG'])
+
+if target_os == 'android':
+    rule_engine_env.AppendUnique(CXXFLAGS = ['-frtti', '-fexceptions'])
+    rule_engine_env.AppendUnique(LIBS = ['gnustl_shared'])
+
+clipscpp_src = [
+    'Clipscpp/src/Activation.cpp',
+    'Clipscpp/src/DefaultFacts.cpp',
+    'Clipscpp/src/Environment.cpp',
+    'Clipscpp/src/Class.cpp',
+    'Clipscpp/src/Fact.cpp',
+    'Clipscpp/src/Function.cpp',
+    'Clipscpp/src/Global.cpp',
+    'Clipscpp/src/Instance.cpp',
+    'Clipscpp/src/Module.cpp',
+    'Clipscpp/src/Router.cpp',
+    'Clipscpp/src/Rule.cpp',
+    'Clipscpp/src/Template.cpp',
+    'Clipscpp/src/Utility.cpp',
+    'Clipscpp/src/Value.cpp',
+]
+
+ruledriver_src = [
+    'RuleDriver/src/RuleEngineCore.cpp',
+    'RuleDriver/src/RuleEngineStore.cpp',
+    'RuleDriver/src/RuleEngineService.cpp',
+    'RuleDriver/src/RuleEventHandler.cpp',
+    'RuleDriver/src/RuleEventThread.cpp',
+    'RuleDriver/src/RuleEngineTimer.cpp',
+    'RuleDriver/src/TimerEvent.cpp',
+    'RuleDriver/src/tables/DBTable.cpp',
+    'RuleDriver/src/tables/DefTable.cpp',
+    'RuleDriver/src/tables/DefTemplateTable.cpp',
+    'RuleDriver/src/tables/DefClassTable.cpp',
+    'RuleDriver/src/tables/DefRuleTable.cpp',
+    'RuleDriver/src/tables/TimerEventTable.cpp',
+    'Payload/src/ClassPayload.cpp',
+    'Payload/src/InstancePayload.cpp',
+    'Payload/src/RulePayload.cpp',
+    'DataChannel.cpp',
+    'DeviceDataChannel.cpp',
+    'MainPublicHandler.cpp',
+    'RuleDataChannel.cpp',
+    'RuleEngineLog.cpp',
+    'MonitorTool.cpp',
+]
+
+shared_libRE = rule_engine_env.SharedLibrary('HB_RuleEngine', [clipscpp_src, ruledriver_src])
+rule_engine_env.InstallTarget(shared_libRE, 'HB_RuleEngine')

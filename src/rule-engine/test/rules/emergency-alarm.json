@@ -1,0 +1,46 @@
+{
+    "result": {
+        "retInfo": "规则查询成功",
+        "rule": {
+            "ruleId": "0000000000.000.00002",
+            "description": "当紧急按钮或者烟雾报警触发时, 通知用户",
+            "trigger": {
+                "switch": {
+                    "enabled": "on",
+                    "notify": "on",
+                    "timeCondition": "off",
+                    "deviceCondition": "on",
+                    "manual": "on"
+                },
+                "triggerType": "auto"
+            },
+            "conditions": {
+                "conditionLogic": "",
+                "deviceCondition": {
+                    "deviceStatus": [
+                        {
+                            "propValue": "v==1",
+                            "deviceId": "38D269B0EA1886D3E200",
+                            "propName": "PowerOnOff"
+                        },
+                        {
+                            "propValue": "v==1",
+                            "deviceId": "00124B00146D743D00",
+                            "propName": "PowerOnOff"
+                        }
+                    ],
+                    "deviceLogic": "or"
+                }
+            },
+            "ruleName": "emergency-alarm-rule",
+            "actions": {
+                "notify": {
+                    "message": "Warning",
+                    "title": "Your house is dangerous!"
+                }
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/rule/query"
+}

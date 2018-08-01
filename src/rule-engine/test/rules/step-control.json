@@ -1,0 +1,44 @@
+{
+    "result": {
+        "retInfo": "规则查询成功",
+        "rule": {
+            "ruleId": "0000000000.000.00004",
+            "description": "测试属性按Step渐变达到最终值",
+            "trigger": {
+                "switch": {
+                    "enabled": "on",
+                    "notify": "off",
+                    "timeCondition": "off",
+                    "deviceCondition": "on",
+                    "manual": "on"
+                },
+                "triggerType": "auto|manual"
+            },
+            "conditions": {
+                "conditionLogic": "",
+                "deviceCondition": {
+                    "deviceStatus": [
+                        {
+                            "propValue": "v==5",
+                            "deviceId": "0007A895C8A7",
+                            "propName": "WorkMode"
+                        }
+                    ],
+                    "deviceLogic": ""
+                }
+            },
+            "ruleName": "step-control",
+            "actions": {
+                "deviceControl": [
+                    {
+                        "propValue": "120",
+                        "deviceId": "04FA0000000A",
+                        "propName": "DumpEnergy"
+                    }
+                ]
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/rule/query"
+}

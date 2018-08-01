@@ -1,0 +1,38 @@
+{
+    "result": {
+        "description": "光感传感器",
+        "id": 10001,
+        "profile": {
+            "OnlineState": {
+                "tag": "在线状态",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "离线",
+                    "1": "在线"
+                }
+            },
+            "Quantity": {
+                "tag": "光度值",
+                "type": "int",
+                "range": "v >= 0 and v <= 1000",
+                "write": "T",
+                "unit": "",
+                "read": "T"
+            },
+            "PowerOnOff": {
+                "tag": "开关",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/device/profile"
+}

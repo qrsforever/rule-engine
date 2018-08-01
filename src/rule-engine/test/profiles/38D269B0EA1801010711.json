@@ -1,0 +1,39 @@
+{
+    "result": {
+        "description": "窗帘",
+        "id": 26,
+        "profile": {
+            "OnlineState": {
+                "tag": "在线状态",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "离线",
+                    "1": "在线"
+                }
+            },
+            "Position": {
+                "tag": "开合位置",
+                "type": "int",
+                "range": "v >= 0 and v <= 6",
+                "step": "1",
+                "write": "T",
+                "unit": "",
+                "read": "T"
+            },
+            "PowerOnOff": {
+                "tag": "开关状态",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/device/profile"
+}

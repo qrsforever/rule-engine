@@ -1,0 +1,39 @@
+{
+    "result": {
+        "description": "灯",
+        "id": 19,
+        "profile": {
+            "OnlineState": {
+                "tag": "在线状态",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "离线",
+                    "1": "在线"
+                }
+            },
+            "PowerOnOff": {
+                "tag": "开关状态",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "Brightness": {
+                "tag": "亮度",
+                "type": "int",
+                "range": "v >= 1 and v <= 7",
+                "step": "1",
+                "write": "T",
+                "unit": "",
+                "read": "T"
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/device/profile"
+}

@@ -1,0 +1,90 @@
+{
+    "result": {
+        "description": "扫地机器人",
+        "id": 10,
+        "profile": {
+            "OnlineState": {
+                "tag": "在线状态",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "离线",
+                    "1": "在线"
+                }
+            },
+            "DumpEnergy": {
+                "tag": "剩余电量",
+                "type": "int",
+                "range": "v >= 0 and v <= 100",
+                "step": "1",
+                "write": "F",
+                "unit": "%",
+                "read": "T"
+            },
+            "Wind": {
+                "tag": "风力大小",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "中风",
+                    "1": "高风",
+                    "3": "无风"
+                }
+            },
+            "WorkState": {
+                "tag": "工作状态",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "待机",
+                    "6": "充电",
+                    "4": "休眠",
+                    "3": "故障",
+                    "5": "工作完成",
+                    "1": "工作中",
+                    "7": "充电完成"
+                }
+            },
+            "WorkCommand": {
+                "tag": "停止清扫/开始清扫",
+                "write": "T",
+                "type": "enum",
+                "read": "F",
+                "range": {
+                    "2": "开始清扫",
+                    "1": "停止清扫"
+                }
+            },
+            "PowerOnOff": {
+                "tag": "开关",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "CleaningMode": {
+                "tag": "清扫模式",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "规划清扫",
+                    "6": "回充模式",
+                    "4": "定点清扫",
+                    "3": "沿边清扫",
+                    "5": "拖地模式",
+                    "1": "空闲模式",
+                    "7": "单间规划"
+                }
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/device/profile"
+}

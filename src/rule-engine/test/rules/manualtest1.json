@@ -1,0 +1,31 @@
+{
+    "result": {
+        "retInfo": "规则查询成功",
+        "rule": {
+            "description": "扫地机器人回充",
+            "ruleName": "manualtest1",
+            "ruleId": "1529578676.958.69587",
+            "actions": {
+                "deviceControl": [
+                    {
+                        "propValue": "4",
+                        "deviceId": "04FA8309822A",
+                        "propName": "CleaningMode"
+                    }
+                ]
+            },
+            "trigger": {
+                "switch": {
+                    "enabled": "on",
+                    "notify": "off",
+                    "timeCondition": "off",
+                    "deviceCondition": "off",
+                    "manual": "off"
+                },
+                "triggerType": "manual"
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/rule/query"
+}

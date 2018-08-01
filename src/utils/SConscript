@@ -1,0 +1,124 @@
+##
+# utils build script
+##
+
+Import('env')
+
+utils_env = env.Clone()
+
+target_os = utils_env.get('TARGET_OS')
+
+utils_env.AppendUnique(CPPPATH = [
+        'Misc/src',
+        'Message/src',
+        'Log/src',
+        'SQLite/src',
+        '#homebrain/external/clips/core',
+        ])
+
+utils_env.AppendUnique(RPATH = [utils_env.get('BUILD_DIR')])
+
+utils_env.AppendUnique(CXXFLAGS = [
+    '-std=c++0x',
+    '-Wall',
+    '-Wextra',
+    '-Werror',
+])
+
+if not utils_env.get('RELEASE'):
+    utils_env.AppendUnique(CPPDEFINES = ['DEBUG'])
+
+utils_env.AppendUnique(CPPDEFINES = ['USE_SHARED_PTR'])
+
+utils_env.AppendUnique(LIBS = ['sqlite3']);
+
+if target_os == 'android':
+    utils_env.AppendUnique(CXXFLAGS = ['-frtti', '-fexceptions'])
+    utils_env.AppendUnique(LIBS = ['gnustl_shared'])
+    utils_env.AppendUnique(CPPPATH = [
+        '#/extlibs/sqlite3',
+        ])
+
+misc_src = [
+    'Misc/src/Common.cpp',
+    'Misc/src/DataSink.cpp',
+    'Misc/src/Mutex.cpp',
+    'Misc/src/RefCnt.cpp',
+    'Misc/src/RingBuffer.cpp',
+    'Misc/src/StringData.cpp',
+    'Misc/src/StringArray.cpp',
+    'Misc/src/SysTime.cpp',
+    'Misc/src/Thread.cpp'
+    ]
+
+message_src = [
+    'Message/src/Message.cpp',
+    'Message/src/MessageHandler.cpp',
+    'Message/src/MessageLooper.cpp',
+    'Message/src/MessageQueue.cpp',
+    ]
+
+log_src = [
+    'Log/src/Log.cpp',
+    'Log/src/LogConsole.cpp',
+    'Log/src/LogFile.cpp',
+    'Log/src/LogFilter.cpp',
+    'Log/src/LogPool.cpp',
+    'Log/src/LogSource.cpp',
+    'Log/src/LogThread.cpp',
+    'Log/src/LogUDP.cpp',
+    ]
+
+sqlite_src = [
+    'SQLite/src/SQLiteDatabase.cpp',
+    'SQLite/src/SQLiteLog.cpp',
+    'SQLite/src/SQLiteResultSet.cpp',
+    ]
+
+# misc
+misc_env = utils_env.Clone()
+static_libutils_misc = misc_env.StaticLibrary('utils_misc', misc_src)
+misc_env.InstallTarget(static_libutils_misc , 'utils_misc')
+
+# message
+message_env = utils_env.Clone()
+message_env.AppendUnique(LIBS=['utils_misc'])
+static_libutis_message = message_env.StaticLibrary('utils_message', message_src)
+message_env.InstallTarget(static_libutis_message , 'utils_message')
+
+# log
+log_env = utils_env.Clone()
+log_env.AppendUnique(LIBS=['utils_message', 'utils_misc'])
+static_libutils_log = log_env.StaticLibrary('utils_log', log_src)
+log_env.InstallTarget(static_libutils_log , 'utils_log')
+
+# sqlite
+sqlite_env = utils_env.Clone()
+sqlite_env.AppendUnique(LIBS=['utils_log', 'utils_message', 'utils_misc'])
+static_libutils_log = sqlite_env.StaticLibrary('utils_sqlite', sqlite_src)
+sqlite_env.InstallTarget(static_libutils_log , 'utils_sqlite')
+
+# utils.so
+shared_libutils = utils_env.SharedLibrary('HB_Utils', [misc_src, message_src, log_src, sqlite_src])
+utils_env.InstallTarget(shared_libutils , 'HB_Utils')
+
+
+# unit test for misc
+misc_test_env = utils_env.Clone()
+misc_test_env.PrependUnique(LIBS=['utils_misc'])
+misc_test_env.Program('test_utils_misc', ['Misc/UnitTest.cpp'])
+
+# unit test for message
+message_test_env = utils_env.Clone()
+message_test_env.PrependUnique(LIBS=['utils_message', 'utils_misc'])
+message_test_env.Program('test_utils_message', ['Message/UnitTest.cpp'])
+
+# unit test for log
+log_test_env = utils_env.Clone()
+log_test_env.PrependUnique(LIBS=['utils_log', 'utils_message', 'utils_misc'])
+log_test_env.Program('test_utils_log', ['Log/UnitTest.cpp'])
+
+# unit test for sqlite
+log_test_env = utils_env.Clone()
+log_test_env.PrependUnique(LIBS=['utils_sqlite', 'utils_log', 'utils_message', 'utils_misc'])
+log_test_env.Program('test_utils_sqlite', ['SQLite/UnitTest.cpp'])

@@ -1,0 +1,9 @@
+{
+    "result": {
+        "description": "网关设备",
+        "id": 16,
+        "profile": {}
+    },
+    "status": 1,
+    "request": "/api/device/profile"
+}

@@ -1,0 +1,127 @@
+{
+    "result": {
+        "description": "热水器",
+        "id": 9,
+        "profile": {
+            "OnlineState": {
+                "tag": "在线状态",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "离线",
+                    "1": "在线"
+                }
+            },
+            "RemainingRatio": {
+                "tag": "剩余热水",
+                "type": "int",
+                "range": "v >= 0 and v <= 100",
+                "step": "1",
+                "write": "T",
+                "unit": "%",
+                "read": "F"
+            },
+            "CurrentTemp": {
+                "tag": "当前温度",
+                "type": "int",
+                "range": "v >= 30 and v <= 80",
+                "step": "1",
+                "write": "F",
+                "unit": "℃",
+                "read": "T"
+            },
+            "ReservationTemp": {
+                "tag": "预约热水温度",
+                "type": "int",
+                "range": "v >= 30 and v <= 80",
+                "step": "1",
+                "write": "T",
+                "unit": "℃",
+                "read": "T"
+            },
+            "RemainingHotWater": {
+                "tag": "剩余热水量",
+                "type": "float",
+                "range": "v >= 0",
+                "step": "0.1",
+                "write": "T",
+                "unit": "升",
+                "read": "F"
+            },
+            "ReservationHotWater": {
+                "tag": "预约热水设置",
+                "write": "F",
+                "type": "group",
+                "read": "F",
+                "range": "Reservation|ReservationTime|ReservationTemp"
+            },
+            "Temperature": {
+                "tag": "设定温度",
+                "type": "int",
+                "range": "v >= 30 and v <= 80",
+                "step": "1",
+                "write": "T",
+                "unit": "℃",
+                "read": "T"
+            },
+            "Volume": {
+                "tag": "容积",
+                "type": "float",
+                "range": "v >= 0",
+                "step": "0.1",
+                "write": "T",
+                "unit": "升",
+                "read": "F"
+            },
+            "WorkingTime": {
+                "tag": "累计通电时间",
+                "type": "float",
+                "range": "v >= 0",
+                "step": "1",
+                "write": "F",
+                "unit": "小时",
+                "read": "T"
+            },
+            "ReservationTime": {
+                "tag": "预约热水时间",
+                "write": "T",
+                "type": "time",
+                "read": "T",
+                "range": "unlimited"
+            },
+            "WorkState": {
+                "tag": "工作状态",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "保温",
+                    "1": "加热中"
+                }
+            },
+            "Reservation": {
+                "tag": "预约热水",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "PowerOnOff": {
+                "tag": "开关",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/device/profile"
+}

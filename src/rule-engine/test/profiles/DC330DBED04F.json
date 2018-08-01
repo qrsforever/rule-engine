@@ -1,0 +1,146 @@
+{
+    "result": {
+        "description": "海尔wifi门锁",
+        "id": 18,
+        "profile": {
+            "OnlineState": {
+                "tag": "在线状态",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "离线",
+                    "1": "在线"
+                }
+            },
+            "CoercionStatus": {
+                "tag": "胁迫开门",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "是",
+                    "1": "否"
+                }
+            },
+            "AlarmStatus": {
+                "tag": "报警",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "是",
+                    "1": "否"
+                }
+            },
+            "BatteryStatus": {
+                "tag": "剩余电量",
+                "type": "int",
+                "range": "v >= 1 and v <= 100",
+                "step": "1",
+                "write": "F",
+                "unit": "%",
+                "read": "T"
+            },
+            "RemoteCodeTail": {
+                "tag": "远程开锁密码5-8位",
+                "type": "int",
+                "range": "v >= 1 and v <= 65535",
+                "step": "1",
+                "write": "T",
+                "read": "T"
+            },
+            "OpenDirection": {
+                "tag": "开门方向",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "外部打开",
+                    "1": "内部打开"
+                }
+            },
+            "Openway": {
+                "tag": "门打开方式",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "密码",
+                    "4": "钥匙",
+                    "3": "指纹",
+                    "1": "刷卡"
+                }
+            },
+            "RemoteCodeLength": {
+                "tag": "设置远程开门密码长度",
+                "type": "int",
+                "range": "v >= 1 and v <= 8",
+                "step": "1",
+                "write": "T",
+                "read": "T"
+            },
+            "LockStatus": {
+                "tag": "门锁状态",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "开锁",
+                    "1": "关锁",
+                    "3": "常开"
+                }
+            },
+            "HackStatus": {
+                "tag": "恶意破解",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "是",
+                    "1": "否"
+                }
+            },
+            "RemoteCodeHead": {
+                "tag": "远程开锁密码1-4位",
+                "type": "int",
+                "range": "v >= 1 and v <= 65535",
+                "step": "1",
+                "write": "T",
+                "read": "T"
+            },
+            "Security": {
+                "tag": "布防",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "关闭",
+                    "1": "开启"
+                }
+            },
+            "LowBatteryAlarm": {
+                "tag": "低电报警",
+                "write": "T",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "是",
+                    "1": "否"
+                }
+            },
+            "LockWarnStatus": {
+                "tag": "门未锁好",
+                "write": "F",
+                "type": "enum",
+                "read": "T",
+                "range": {
+                    "2": "是",
+                    "1": "否"
+                }
+            }
+        }
+    },
+    "status": 1,
+    "request": "/api/device/profile"
+}
